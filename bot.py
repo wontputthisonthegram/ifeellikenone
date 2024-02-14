@@ -182,7 +182,7 @@ async def _(event):
             except Exception as e:
                 log.error(e)
                 return
-            msg = f"{name},Добро пожаловать в чат IWannaPlay. Перед тем как писать что-либо, загляни в закрепленное сообщение, ответ может быть там!"
+            msg = f"Добро пожаловать в чат IWannaPlay. Перед тем как писать что-либо, загляни в закрепленное сообщение, ответ может быть там!"
             butt = [Button.url("Список Игр", url=f"https://sites.google.com/view/iwannaplay/%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B8%D0%B3%D1%80")]
             await event.edit(msg, buttons=butt)
     else:
