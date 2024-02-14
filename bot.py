@@ -183,11 +183,11 @@ async def _(event):
                 log.error(e)
                 return
             msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!"
-            butt = [Button.url("Channel", url=f"https://t.me/{channel}")]
+            butt = [Button.url("Канал", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
         await event.answer(
-            "You are an old member and can speak freely! This isn't for you!",
+            "Ты уже подписан на канал. Это сообщение не для тебя!",
             cache_time=0,
             alert=True,
         )
@@ -196,10 +196,10 @@ async def _(event):
 @BotzHub.on(events.NewMessage(pattern="^/start$"))
 async def strt(event):
     await event.reply(
-        f"Hi. I'm a force subscribe bot made specially for @{channel}!\n\nCheckout @BotzHub :)",
+        f"Привет. Я менеджер IWP. Я делаю важные дела",
         buttons=[
-            Button.url("Channel", url=f"https://t.me/{channel}"),
-            Button.url("Repository", url="https://github.com/xditya/ForceSub"),
+            Button.url("Канал", url=f"https://t.me/IWannaPlayChannel"),
+            Button.url("Чат", url="https://t.me/iwpchat"),
         ],
     )
 
