@@ -95,7 +95,7 @@ async def _(event):
                 channel=f"@{channel}",
                 count=count,
             )
-            butt = [Button.url("Channel", url=f"https://t.me/{channel}")]
+            butt = [Button.url("Канал", url=f"https://t.me/{channel}")]
         else:
             msg = welcome_not_joined.format(
                 mention=mention,
@@ -108,8 +108,8 @@ async def _(event):
                 count=count,
             )
             butt = [
-                Button.url("Channel", url=f"https://t.me/{channel}"),
-                Button.inline("UnMute Me", data=f"unmute_{user.id}"),
+                Button.url("Канал", url=f"https://t.me/{channel}"),
+                Button.inline("Подписался", data=f"unmute_{user.id}"),
             ]
             await BotzHub.edit_permissions(
                 event.chat.id, user.id, until_date=None, send_messages=False
@@ -158,8 +158,8 @@ async def mute_on_msg(event):
             count=count,
         )
         butt = [
-            Button.url("Channel", url=f"https://t.me/{channel}"),
-            Button.inline("UnMute Me", data=f"unmute_{event.sender_id}"),
+            Button.url("Канал", url=f"https://t.me/{channel}"),
+            Button.inline("Подписался", data=f"unmute_{event.sender_id}"),
         ]
         await event.reply(reply_msg, buttons=butt)
 
@@ -172,7 +172,7 @@ async def _(event):
         nm = event.sender.first_name
         if x is False:
             await event.answer(
-                f"You haven't joined @{channel} yet!", cache_time=0, alert=True
+                f"Ты не подписался на канал!!!", cache_time=0, alert=True
             )
         elif x is True:
             try:
@@ -183,7 +183,7 @@ async def _(event):
                 log.error(e)
                 return
             msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!"
-            butt = [Button.url("Канал", url=f"https://t.me/{channel}")]
+            butt = [Button.url("Список Игр", url=f"https://sites.google.com/view/iwannaplay/%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B8%D0%B3%D1%80")]
             await event.edit(msg, buttons=butt)
     else:
         await event.answer(
