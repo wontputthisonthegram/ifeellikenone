@@ -199,7 +199,7 @@ async def strt(event):
         f"Привет. Я менеджер IWP. Я делаю важные дела",
         buttons=[
             Button.url("Канал", url=f"https://t.me/IWannaPlayChannel"),
-            Button.url("Чат", url="https://t.me/iwpchat"),
+            Button.url("Чат", url="https://t.me/+hWbIipseHAc5NThi"),
         ],
     )
 
